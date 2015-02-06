@@ -22,7 +22,10 @@ def main(input_filename, output_filename):
     bars = audiofile.analysis.bars
     collect = audio.AudioQuantumList()
     for bar in bars:
-        collect.append(bar.children()[1])
+	try:
+            collect.append(bar.children()[1])
+	except IndexError:
+	    pass
     out = audio.getpieces(audiofile, collect)
     out.encode(output_filename)
 
