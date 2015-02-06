@@ -11,10 +11,10 @@ import echonest.remix.audio as audio
 
 usage = """
 Usage: 
-    python one.py <input_filename> <output_filename>
+    python sarabande.py <input_filename> <output_filename>
 
 Example:
-    python one.py EverythingIsOnTheOne.mp3 EverythingIsReallyOnTheOne.mp3
+    python sarabande.py EverythingIsOnTheOne.mp3 EverythingIsReallyOnTheOne.mp3
 """
 
 def main(input_filename, output_filename):
