@@ -6,5 +6,5 @@ This module takes the sarabande concept to the extreme: given an input mp3 file,
 
 The module is executed like so:
 ```
-python sarabande.py NameOfFile.mp3
+python sarabande.py NameOfInputFile.mp3 NameOfOutputFile.mp3
 ```
