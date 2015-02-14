@@ -37,8 +37,6 @@ def main(input_filename):
 				output.write(sections[2].split(',')[0]+" ")
 				# writes timestamp then newline
 				output.write(str(timesum)+"\n")
-			else:
-				pass
 	output.close()
 
 if __name__ == '__main__':
