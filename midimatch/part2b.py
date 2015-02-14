@@ -38,11 +38,12 @@ def main(input_filename):
 					else:
 						i = i + 1
 				for event in events:
-					output.write(event[0] + ' ' + event[1] + ' ' + event[2])
+					output.write(' '.join(event))
 				output.write(line)
 				events = []
 			line = input.readline()
 		output.write(line)
+		output.close()
 
 if __name__ == '__main__':
     try:
