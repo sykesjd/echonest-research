@@ -12,7 +12,7 @@ Usage:
     python part3.py <input_txt>
 
 Example:
-    python part3.py BWV552_p2b.txt
+    python part3.py BWV552_p2.txt
 """
 
 def main(input_filename):
