@@ -3,7 +3,7 @@
 This repository contains research modules testing the capabilities of the Echonest and Echonest Remix APIs in Python Anaconda. The modules currently contained are:
 
 * sarabande - a trial module set up when this repository was created; takes an mp3 file and outputs a 'sarabande' mp3 file
-* midimatch - an ongoing experiment in matching a MIDI representation of a classical piece to an MP3 performance in order to create an animated piano roll for the piece
+* infinitestop - matches similar sections of "For What It's Worth" and plays section by section like Infinite Jukebox plays beat by beat, except for a predetermined amount of time
 
 The repository also contains inquiry reports pertaining to research performed for the class corresponding to this repository. The inquiries currently contained are:
 
