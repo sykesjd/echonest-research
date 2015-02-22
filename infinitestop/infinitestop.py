@@ -36,33 +36,31 @@ def main(fwiw, length, aqp):
 		p1, t1, lb1, lm1 = s1.pitches, s1.timbre, s1.loudness_begin, s1.loudness_max
 		k = 0
 		for s2 in fsegs:
-			if j != k and k < len(sections) - 1:
+			if j != k and k != len(sections) - 1:
 				p2, t2, lb2, lm2 = s2.pitches, s2.timbre, s2.loudness_begin, s2.loudness_max
 				dp, dt, db, dm = 0, 0, abs(lb2 - lb1), abs(lm2 - lm1)
 				for i in range(12):
 					dp = dp + (p2[i] - p1[i])**2
 					dt = dt + (t2[i] - t1[i])**2
 				dist = (dp**0.5) + (dt**0.5) + db + dm
-				if dist < 120:
+				if dist < 115:
 					adjlists[j].append(k)
-			elif j < len(sections) - 1:
+			elif j != len(sections) - 1 and k != len(sections) - 1:
 				adjlists[j].append(k)
 			k = k + 1
 		j = j + 1
+	print adjlists
 	collect = []
-	collect.append(sections[0])
-	duration = sections[0].duration
-	i = 1
+	duration = 0
+	i = 0
 	secdur = sections[i].duration
 	while duration + secdur < length:
 		collect.append(sections[i])
 		duration = duration + secdur
-		try:
-			i = random.choice(adjlists[i+1])
-		except:
-			main(fwiw, length, aqp)
-			aqp.closeStream()
-			sys.exit(0)
+		newi = random.choice(adjlists[i+1])
+		while len(adjlists[newi+1]) == 0:
+			newi = random.choice(adjlists[i+1])
+		i = newi
 		secdur = sections[i].duration
 	collect.append(sections[2].children()[-1].children()[-1].children()[-1])
 	collect.append(sections[3].children()[0].children()[0].children()[0])
