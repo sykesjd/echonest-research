@@ -42,13 +42,14 @@ def main(fwiw, length, aqp):
 				for i in range(12):
 					dp = dp + (p2[i] - p1[i])**2
 					dt = dt + (t2[i] - t1[i])**2
-				dist = (dp**0.5) + (dt**0.5) + db + dm
-				if dist < 115:
+				dist = (dp**0.5)*10 + (dt**0.5) + db + dm
+				if dist < 130:
 					adjlists[j].append(k)
 			elif j != len(sections) - 1 and k != len(sections) - 1:
 				adjlists[j].append(k)
 			k = k + 1
 		j = j + 1
+	print adjlists
 	collect = []
 	duration = 0
 	i = 0
