@@ -36,6 +36,7 @@ Infinite Jukebox computes the distance between two segments by computing the Euc
 ### 2. Mini-abstract and relevance of [EchoNest Analyzer Documentation]
 The documentation to EchoNest's Analyzer API says the following about sections:
 > Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness.
+
 From this we can answer question 2: provided by the analysis at the section level is tempo, key, mode, time signature, and loudness. How important are each of these characteristics in determining the similarity of two sections?
 * Tempo: relatively important. If the two sections are of wildly different tempi, chances are the transition from one section's predecessor to the other section would be rather jarring. I would assign the weight of 10, in Infinite Jukebox terms. Introducing the ability to change the tempo of a section with Remix would change how we treat tempo, but for now we can say the difference in tempi multiplied by 10 can be added to the distance between sections.
 * Key: very important. Expecting to go into one key and suddenly ending up in another would make for a discordant transition indeed. I would assign a weight of 100, in Infinite Jukebox terms. Introducing the ability to change the key of a section with Remix would change how we treat key, but for now we can say the difference in keys multiplied by 100 can be added to the distance between sections.

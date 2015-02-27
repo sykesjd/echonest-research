@@ -16,6 +16,7 @@ Examining the inline Javascript on the Infinite Jukebox page, we can see that IJ
 ### 2. Mini-abstract and relevance of [AudioQuantum in Echonest Remix API]
 A look at the Echonest Remix API for the AudioQuantum class reveals the following about its `children()` method:
 > Returns an AudioQuantumList of the AudioQuanta that it contains, one step down the hierarchy. A `beat` returns `tatum`s, a `bar` returns `beat`s, and a `section` returns `bar`s.
+
 This information reveals that segments are not actually placed within the hierarchy structure of quantum types, so finding the first segment of a beat is not as easy as chaining calls to `children()`.
 
 ### 3. Mini-abstract and relevance of [JRemixer Used by Infinite Jukebox]
