@@ -43,6 +43,7 @@ From this we can answer question 2: provided by the analysis at the section leve
 * Mode: relatively unimportant. Expecting C major and getting C minor, for example, is a common occurence in Western music, so it would not necessarily make a bad transition. I would assign a weight of 1, in Infinite Jukebox terms.
 * Time Signature: relatively unimportant. Changes in time signature are also a staple in Western music, so a transition between time signatures would not necessarily be bad. I would assign a weight of 1, in Infinite Jukebox terms.
 * Loudness: Infinite Jukebox already has a weight of 1 on each of the segment-level loudness attributes, so it would be safe to have the same weight at the section level.
+
 Included with this report is a python script that takes two songs and outputs three images: two plots of distances between sections within each song and one plot of distances between sections between the two songs.
 
 [Infinite Jukebox Inline JS]: http://labs.echonest.com/Uploader/index.html
