@@ -43,9 +43,9 @@ def main(input_one, input_two, output_name):
 			tp2, k2, m2, ts2, ln2 = sectionsone[j].tempo, sectionsone[j].key, sectionsone[j].mode, sectionsone[j].time_signature, sectionsone[j].loudness
 			dp, dt, db, dm, dd = 0, 0, abs(lb2 - lb1), abs(lm2 - lm1), abs(d2 - d1)
 			dtp, dk, dm, dts, dln = abs(tp2 - tp1), min(abs(k2 - k1), 12 - abs(k2 - k1)), abs(m2 - m1), 1/fractions.gcd(ts2, ts1), abs(ln2 - ln1)
-			for i in range(12):
-				dp = dp + (p2[i] - p1[i])**2
-				dt = dt + (t2[i] - t1[i])**2
+			for k in range(12):
+				dp = dp + (p2[k] - p1[k])**2
+				dt = dt + (t2[k] - t1[k])**2
 			dist = (dp**0.5)*10 + (dt**0.5) + db + dm + dd*100 + dtp*10 + dk*100 + dm + dts + dln
 			ssmone.append(dist)
 	for i in range(len(sectionstwo)):
@@ -56,9 +56,9 @@ def main(input_one, input_two, output_name):
 			tp2, k2, m2, ts2, ln2 = sectionstwo[j].tempo, sectionstwo[j].key, sectionstwo[j].mode, sectionstwo[j].time_signature, sectionstwo[j].loudness
 			dp, dt, db, dm, dd = 0, 0, abs(lb2 - lb1), abs(lm2 - lm1), abs(d2 - d1)
 			dtp, dk, dm, dts, dln = abs(tp2 - tp1), min(abs(k2 - k1), 12 - abs(k2 - k1)), abs(m2 - m1), 1/fractions.gcd(ts2, ts1), abs(ln2 - ln1)
-			for i in range(12):
-				dp = dp + (p2[i] - p1[i])**2
-				dt = dt + (t2[i] - t1[i])**2
+			for k in range(12):
+				dp = dp + (p2[k] - p1[k])**2
+				dt = dt + (t2[k] - t1[k])**2
 			dist = (dp**0.5)*10 + (dt**0.5) + db + dm + dd*100 + dtp*10 + dk*100 + dm + dts + dln
 			ssmtwo.append(dist)
 	for i in range(len(sectionsone)):
@@ -69,9 +69,9 @@ def main(input_one, input_two, output_name):
 			tp2, k2, m2, ts2, ln2 = sectionstwo[j].tempo, sectionstwo[j].key, sectionstwo[j].mode, sectionstwo[j].time_signature, sectionstwo[j].loudness
 			dp, dt, db, dm, dd = 0, 0, abs(lb2 - lb1), abs(lm2 - lm1), abs(d2 - d1)
 			dtp, dk, dm, dts, dln = abs(tp2 - tp1), min(abs(k2 - k1), 12 - abs(k2 - k1)), abs(m2 - m1), 1/fractions.gcd(ts2, ts1), abs(ln2 - ln1)
-			for i in range(12):
-				dp = dp + (p2[i] - p1[i])**2
-				dt = dt + (t2[i] - t1[i])**2
+			for k in range(12):
+				dp = dp + (p2[k] - p1[k])**2
+				dt = dt + (t2[k] - t1[k])**2
 			dist = (dp**0.5)*10 + (dt**0.5) + db + dm + dd*100 + dtp*10 + dk*100 + dm + dts + dln
 			ssmonetwo.append(dist)
 	ssmone = numpy.array(ssmone).reshape(len(fsegsone), len(fsegsone))
