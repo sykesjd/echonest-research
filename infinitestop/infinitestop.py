@@ -49,7 +49,6 @@ def main(fwiw, length, aqp):
 				adjlists[j].append(k)
 			k = k + 1
 		j = j + 1
-	print adjlists
 	collect = []
 	duration = 0
 	i = 0
