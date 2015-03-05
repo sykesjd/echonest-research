@@ -4,7 +4,7 @@ This repository contains research modules testing the capabilities of the Echone
 
 * sarabande - a trial module set up when this repository was created; takes an mp3 file and outputs a 'sarabande' mp3 file
 * infinitestop - matches similar sections of "For What It's Worth" and plays section by section like Infinite Jukebox plays beat by beat, except for a predetermined amount of time
-* infiniteswitch - matches similar section between two songs and plays section by section for a predetermined amount of time
+* infiniteswitch - matches similar sections between two songs and plays section by section for a predetermined amount of time
 
 The repository also contains inquiry reports pertaining to research performed for the class corresponding to this repository. The inquiries currently contained are:
 
