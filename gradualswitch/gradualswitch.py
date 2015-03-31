@@ -11,7 +11,7 @@ Jesse David Sykes, 26 March 2015
 import os
 import sys
 import dirac
-from echonest.remix import audio, modify
+from echonest.remix import audio
 from aqplayer import Player
 
 usage = """
@@ -46,30 +46,16 @@ def main(input_one, input_two):
 		for beat in bar.children():
 			collect.append(beat.render())
 	out_data_one = audio.assemble(collect, numChannels=2)
-	out_name_one = input_one.split('.')[0]+'_stretch.mp3'
+	out_name_one = input_one.split('.')[0]+'-stretch.mp3'
 	out_data_one.encode(out_name_one)
-	key_one = section_one.key
-	key_two = section_two.key
-	key_shift = key_one - key_two
-	if abs(key_shift) > 6:
-		if key_shift < 0:
-			key_shift = 12 + key_shift
-		else:
-			key_shift = key_shift - 12
-	soundtouch = modify.Modify()
-	new_two = soundtouch.shiftPitchSemiTones(track_two[section_two], key_shift)
-	out_shape_two = (len(section_two.render().data),)
-	out_data_two = audio.AudioData(shape=out_shape_two, numChannels=1, sampleRate=44100)
-	out_data_two.append(new_two)
-	out_name_two = input_two.split('.')[0]+'_shift.mp3'
-	out_data_two.encode(out_name_two)
 	play_one = audio.LocalAudioFile(out_name_one)
-	play_two = audio.LocalAudioFile(out_name_two)
 	aqp_one = Player(play_one)
-	aqp_two = Player(play_two)
-	aqp_one.play()
-	aqp_two.play()
+	aqp_two = Player(track_two)
+	beats_one = play_one.analysis.beats
+	for beat in beats_one:
+		aqp_one.play(beat)
 	aqp_one.closeStream()
+	aqp_two.play(section_two)
 	aqp_two.closeStream()
 
 if __name__ == '__main__':
