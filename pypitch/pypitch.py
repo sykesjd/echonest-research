@@ -29,7 +29,7 @@ class PyPitch(object):
 	def shiftPitchOctaves(audio_data, octaves):
 		if octaves == 0:
 			return audio_data
-		factor = 2 ** octaves
+		factor = 2.0 ** octaves
 		stretched_data = dirac.timeScale(audio_data, factor)
 		index = numpy.floor(numpy.arange(0, stretched_data.shape[0], factor)).astype('int32')
 		new_data = stretched_data[index]
