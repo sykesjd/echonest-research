@@ -5,10 +5,8 @@ Provides a means of shifting the pitch of given audio.
 Jesse David Sykes, 10 April 2015
 """
 
-import math
 import dirac
 import numpy
-import scipy.signal as signal
 
 class PyPitch(object):
 	@staticmethod
