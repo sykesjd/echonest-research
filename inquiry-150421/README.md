@@ -66,8 +66,8 @@ After this, when reporting edges, in addition to reporting the to and from secti
 adjlists[i][k].append([j,l])
 adjlists[j][l].append([i,k])
 # new way
-adjlists[i][k].append([j,l,dk])
-adjlists[j][l].append([i,k,-dk])
+adjlists[i][k].append([j,l,(dk if pshift else 0)])
+adjlists[j][l].append([i,k,(-dk if pshift else 0)])
 ```
 
 In the final player application, `dk` will be used to determine whether and by how much to shift the pitch of a section to play. Also in the player, a running variable - call it `cdk` - will keep track of how much the pitch has been shifted for the currently playing section, which will ensure the next section will be shifted by the correct amount.
