@@ -14,3 +14,4 @@ The repository also contains inquiry reports pertaining to research performed fo
 * 03 March 2015 - a look into how to expand beyond Infinite Jukebox's comparison method for comparing sections using section-level data
 * 24 March 2015 - a look into how Remix shifts pitch and tempo for audio quanta
 * 07 April 2015 - a look into how to reverse engineer the desired functionality for the problematic SoundTouch
+* 21 April 2015 - a look into how to revise the section comparison calculation to account for possible pitch shifting
