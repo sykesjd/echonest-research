@@ -12,7 +12,7 @@ For simplicity's sake, the `shiftPitchSemiTones` method will only shift within Â
 
 A test module `testpypitch.py` is provided as an example of how to use pypitch: it takes in an audio file, shifts the pitch by a user-specified amount, then outputs the result as another audio file.
 
-The test module is executed by the audio file name and the number of semitones by which you wish to shift the pitch (negative for shifting down), like so:
+The test module is executed providing by the audio file name and the number of semitones by which you wish to shift the pitch (negative for shifting down), like so:
 ```
 python testpypitch.py BWV552.mp3 -2
 ```

@@ -49,8 +49,8 @@ dp = dp ** 0.5
 if dk != 0:
 	dps = 0
 	for i in range(12):
-		dps = dps + (p2[(i-dk)%12] - p1[i])^2
-	dps == dps ** 0.5
+		dps = dps + (p2[(i-dk)%12] - p1[i])**2
+	dps = dps ** 0.5
 	if dps < dp:
 		dp = dps
 		pshift = True
