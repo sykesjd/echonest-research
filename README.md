@@ -8,6 +8,7 @@ This repository contains research modules testing the capabilities of the Echone
 * gradualswitch - transitions between two sections of different tempi by gradually changing the tempo throughout the last bar of the first section toward the tempo of the second section
 * pypitch - a reverse engineering of Soundtouch, the means by which to pitch shift audio in Remix
 * infiniteshift - matches similar sections between three songs and plays section by section for a predetermined amount of time, tempo and pitch shifting as necessary
+* infinite_shiftlist - final project for the semester: an application to play songs from a file system playlist section by section, transitioning with tempo and pitch shifting
 
 The repository also contains inquiry reports pertaining to research performed for the class corresponding to this repository. The inquiries currently contained are:
 
