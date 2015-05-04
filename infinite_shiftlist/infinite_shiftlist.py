@@ -94,7 +94,12 @@ def sec_distances(u_, v_=None):
                 pitchdist = euclidean(seci[0:12], secj[0:12])
                 ps = False 
                 if pshift != 0:
-                    dps = euclidean(seci[0:12], roll(secj[0:12], pshift))
+                    dps = 0
+                    for k in range(12):
+                        dps += (secj[(12+k-pshift)%12]-seci[k])**2
+                    dps = dps ** 0.5
+                    # numpy function below yields casting error
+                    # dps = euclidean(seci[0:12], roll(secj[0:12], pshift))
                     if dps < pshift:
                         pitchdist = dps
                         ps = True
