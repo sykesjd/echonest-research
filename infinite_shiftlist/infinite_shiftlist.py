@@ -24,7 +24,7 @@ import getopt
 
 AUDIO_EXTENSIONS = {'mp3', 'm4a', 'wav', 'ogg', 'au', 'mp4'}
 PLAYLIST_DIR = 'playlist'
-THRESHOLD = 225
+THRESHOLD = 150
 SPOT_DIR = 'spotify'
 SPOT_PLAY = PLAYLIST_DIR + os.sep + 'spotify.play.pkl'
 
@@ -76,7 +76,7 @@ def get_sections(audio_file_):
     timesig_ = array([sec_.time_signature for sec_ in aq_secs_]).reshape((nsec_, 1))
     secloud_ = array([sec_.loudness for sec_ in aq_secs_]).reshape((nsec_, 1))
     # return an ndarray with info for all sections
-    return hstack((10 * pitches_, timbre_, 100 * duration_, loudness_max_, loudness_start_, 10 * tempo_, 10 * key_, mode_, timesig_, secloud_))
+    return hstack((10 * pitches_, timbre_, 100 * duration_, loudness_max_, loudness_start_, tempo_, 10 * key_, mode_, timesig_, secloud_))
 
 def sec_distances(u_, v_=None):
     if v_ is None:
